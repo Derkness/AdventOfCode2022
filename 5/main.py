@@ -34,24 +34,19 @@ def move_boxes_2(structure, script):
 
 if __name__ == "__main__":
     structure1 = get_starting_structure()
-    with open("input.txt", "r") as file:
-        for line in file:
-            if line[0] == "m":
-                values = re.split("move | from | to |\n", line)
-                values = values[1:4]
-                structure1 = move_boxes_1(structure1, values)
-
-    print("Part 1")
-    for struct in structure1:
-        print(struct)
-        
     structure2 = get_starting_structure()
     with open("input.txt", "r") as file:
         for line in file:
             if line[0] == "m":
                 values = re.split("move | from | to |\n", line)
                 values = values[1:4]
+                structure1 = move_boxes_1(structure1, values)
                 structure2 = move_boxes_2(structure2, values)
+                
+
+    print("Part 1")
+    for struct in structure1:
+        print(struct)
                 
     print("Part 2")
     for struct in structure2:
