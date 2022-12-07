@@ -1,6 +1,6 @@
 import collections
 
-def part(limit):
+def find_non_duplicate(limit):
      with open("input.txt", "r") as file:
         starting = True
         line = file.readline()
@@ -15,5 +15,5 @@ def part(limit):
                 return index+1
 
 if __name__ == "__main__":
-   print(part(4))
-   print(part(14))
+   print(find_non_duplicate(4))
+   print(find_non_duplicate(14))
